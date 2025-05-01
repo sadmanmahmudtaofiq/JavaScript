@@ -1,3 +1,3 @@
 "use strict";
 
-console.log("Sadman Mahmud Taofiq");
+alert("Sadman Mahmud Taofiq")

@@ -9,8 +9,9 @@
 :root {
   --color: #828e98;
   --main-color: #0063e1;
-  --font-size: 20px;
+  --font-size: 28px;
   --highlight-color: #398fff;
+  --small-font-size: 20px;
 }
 
 body {
@@ -47,6 +48,10 @@ body {
   justify-content: center;
 }
 
+.headerText p{
+  font-size: var(--small-font-size);
+}
+
 .fbImage {
   width: 100%;
   height: fit-content;
@@ -74,7 +79,7 @@ input {
   background-color: transparent;
   border: 1px solid var(--color);
   color: var(--color);
-  padding: 15px 20px;
+  padding: 20px 40px;
   border-radius: 13px;
   width: 100%;
   font-size: var(--font-size);
@@ -86,6 +91,11 @@ input:focus {
 
 input::placeholder {
   color: var(--color);
+  font-size: 25px;
+}
+
+.forgot{
+  font-size: var(--small-font-size) !important;
 }
 
 button {
@@ -143,7 +153,7 @@ footer img {
   display: flex;
   justify-content: center;
   position: relative;
-  padding: 10px;
+  padding: 20px;
 }
 
 .text::after,
