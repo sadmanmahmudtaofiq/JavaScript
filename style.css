@@ -9,9 +9,9 @@
 :root {
   --color: #828e98;
   --main-color: #0063e1;
-  --font-size: 28px;
+  --font-size: 40px;
   --highlight-color: #398fff;
-  --small-font-size: 20px;
+  --small-font-size: 30px;
 }
 
 body {
@@ -61,7 +61,7 @@ body {
 }
 
 .fbImage img {
-  width: 90px;
+  width: 150px;
 }
 
 .inputContainer {
@@ -71,7 +71,7 @@ body {
   flex-direction: column;
   margin: auto;
   width: 100%;
-  gap: 15px;
+  gap: 25px;
   margin-top: 200px;
 }
 
@@ -80,7 +80,7 @@ input {
   border: 1px solid var(--color);
   color: var(--color);
   padding: 20px 40px;
-  border-radius: 13px;
+  border-radius: 20px;
   width: 100%;
   font-size: var(--font-size);
 }
@@ -91,7 +91,7 @@ input:focus {
 
 input::placeholder {
   color: var(--color);
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .forgot{
@@ -102,7 +102,7 @@ button {
   background: var(--main-color);
   border: none;
   color: white;
-  padding: 15px 20px;
+  padding: 30px 20px;
   border-radius: 40px;
   cursor: pointer;
   transition: all 0.2s;
