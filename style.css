@@ -36,6 +36,7 @@ body {
   justify-content: center;
   gap: 50px;
   background: var(--bg-color);
+  margin-top: 20px;
 }
 
 .headerText {
@@ -60,7 +61,7 @@ body {
 }
 
 .fbImage img {
-  width: 134px;
+  width: 137px;
 }
 
 .inputContainer {
@@ -90,7 +91,7 @@ input:focus {
 
 input::placeholder {
   color: var(--color);
-  font-size: 34px;
+  font-size: 36px;
 }
 
 .forgot {
