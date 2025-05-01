@@ -186,3 +186,13 @@ footer img {
 .change {
   color: var(--highlight-color);
 }
+
+
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}

