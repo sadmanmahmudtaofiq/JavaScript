@@ -8,15 +8,15 @@
 }
 
 body {
-  background: #393939;
+  background: #162126;
 }
 
-::selection{
-    background-color: #5555ad;
-    color: white;
+::selection {
+  background-color: #5555ad;
+  color: white;
 }
 
-.title {
+.firstTitle {
   font-size: 20px;
   text-align: center;
   margin-top: 50px;
@@ -24,8 +24,25 @@ body {
   font-weight: bold;
 }
 
-.title strong {
+.firstTitle strong {
   background-color: #f0a602;
   padding: 3px 8px;
   color: black;
+}
+
+input {
+  padding: 12px 20px;
+  width: 300px;
+  background: rgb(31, 32, 35);
+  border: 1px solid rgb(60, 63, 68);
+  border-radius: 4px;
+  font-size: 13px;
+  color: rgb(247, 248, 248);
+  appearance: none;
+  transition: border 0.15s ease 0s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
 }

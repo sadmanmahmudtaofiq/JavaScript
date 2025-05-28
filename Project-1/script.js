@@ -1,20 +1,3 @@
-"use strict";
-
-const textToSpeach = () => {
-  const input = document.querySelector(".input");
-  const btn = document.querySelector(".btn");
-
-  const textToSpeach = () => {
-    let text = input.value;
-    const voice = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(voice);
-  };
-
-  btn.addEventListener("click", textToSpeach);
-};
-
-// textToSpeach();
-
 const stacks = [
   {
     name: "MERN Stack",
@@ -65,46 +48,115 @@ const stacks = [
     popular: false,
     cost: 4500,
   },
+  {
+    name: "Flutter Stack",
+    components: "Dart, Flutter, Firebase",
+    language: "Dart",
+    popular: true,
+    cost: 3000,
+  },
+  {
+    name: "ASP.NET Core",
+    components: "C#, ASP.NET, SQL Server",
+    language: "C#",
+    popular: true,
+    cost: 4700,
+  },
+  {
+    name: "Go Web Stack",
+    components: "Go, Gin, GORM, PostgreSQL",
+    language: "Go",
+    popular: false,
+    cost: 3600,
+  },
+  {
+    name: "Rust Web Stack",
+    components: "Rust, Actix Web, Diesel, PostgreSQL",
+    language: "Rust",
+    popular: false,
+    cost: 3900,
+  },
+  {
+    name: "Elixir Phoenix Stack",
+    components: "Elixir, Phoenix, Ecto, PostgreSQL",
+    language: "Elixir",
+    popular: false,
+    cost: 3400,
+  },
+  {
+    name: "Kotlin Backend Stack",
+    components: "Kotlin, Ktor, Exposed, PostgreSQL",
+    language: "Kotlin",
+    popular: false,
+    cost: 3500,
+  },
+  {
+    name: "Perl Mojolicious Stack",
+    components: "Perl, Mojolicious, DBI, MySQL",
+    language: "Perl",
+    popular: false,
+    cost: 2700,
+  },
+  {
+    name: "Haskell Stack",
+    components: "Haskell, Yesod, Persistent, PostgreSQL",
+    language: "Haskell",
+    popular: false,
+    cost: 3300,
+  },
+  {
+    name: "HTML Basic Stack",
+    components: "HTML, JS, Web APIs",
+    language: "HTML",
+    popular: true,
+    cost: 2000,
+  },
+  {
+    name: "CSS Styling Stack",
+    components: "CSS, Sass, Tailwind, PostCSS",
+    language: "CSS",
+    popular: true,
+    cost: 2100,
+  },
 ];
 
-const input = document.querySelector(".input");
-const btn = document.querySelector(".btn");
+const section = document.querySelector("section");
+const input = document.querySelector(".container input");
+input.addEventListener("input", () => start());
 
-btn.addEventListener("click", () => {
-  const inputValue = input.value.toLowerCase().trim();
-
-  const getStack = stacks.filter((sk) => sk.language.toLowerCase() === inputValue);
-  console.log(getStack, getStack.length);
-
-  let html = "";
+function start() {
+  const inputValue = input.value.trim().toLowerCase();
+  const getStack = stacks.filter(
+    (sk) => sk.language.toLowerCase() === inputValue
+  );
 
   if (getStack.length > 0) {
-    getStack.forEach((i) => {
-      const { name, components, language, popular, cost } = i;
-    
+    let html = "";
+    getStack.forEach((index) => {
+      let { name, components, language, popular, cost } = index;
+      const popularClass = popular ? "Popular" : "Not popular";
+      let code = `
+      <h1><a href="#">${language}</a> Technology Stacks</h1>
 
-    const popularClass = popular ? "Popular" : "Not popular";
-
-    html += `
-    
-      <h1>${language} Technology Stacks</h1>
-            
       <div class="stack-card">
-          <h2 class="stack-name">${name}
-              <span class="not-popular">${popularClass}</span>
-          </h2>
-          <p><strong>Components:</strong> ${components}</p>
-          <p><strong>Language:</strong> ${language}</p>
-          <p><strong>Price:</strong> $<span class="price">${cost}</span></p>
+        <h2 class="stack-name">
+          ${name}
+          <span class="not-popular">${popularClass}</span>
+        </h2>
+        <p><strong>Components:</strong> ${components}</p>
+        <p><strong>Language:</strong> ${language}</p>
+        <p><strong>Price:</strong> $<span class="price">${cost}</span></p>
       </div>
-    
-    `;
+      `;
+      html += code;
     });
-  } 
-  
-  else {
-    html = `<p class="no-results">No stacks found for language "${inputValue}"</p>`;
-  }
 
-  document.querySelector("section").innerHTML = html;
-});
+    section.innerHTML = html;
+  } else {
+    section.innerHTML = `<p class="no-results">No stacks found for language "${inputValue}"</p>`;
+  }
+  const message = document.querySelector("section h1 a");
+  message.addEventListener("click", () => {
+    alert("Fuck You!");
+  });
+}

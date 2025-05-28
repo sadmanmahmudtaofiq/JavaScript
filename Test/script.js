@@ -5,7 +5,6 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const sqNumbers = numbers.map((num) => num * num);
 // console.log(sqNumbers);
 
-
 const sadmanBus = {
   bus: "Sadman Bus",
   busCode: "SB",
@@ -23,7 +22,6 @@ sadmanBus.book("S3", "Mahmud");
 sadmanBus.book("S1", "Taofiq");
 console.log(sadmanBus); */
 
-
 const taofiqBus = {
   bus: "Taofiq Bus",
   busCode: "TB",
@@ -38,3 +36,5 @@ console.log(taofiqBus); */
 
 //https://youtu.be/KC-JUipn3gA?list=PLSNRR4BKcowDMTFWYgMqRHRuohVA6IKiD&t=654
 //https://www.youtube.com/watch?v=7qSy_pAAZog&t=987s
+
+
