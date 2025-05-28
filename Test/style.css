@@ -1,8 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", system-ui;
+}
+
+body {
+  background: #393939;
+}
+
+::selection{
+    background-color: #5555ad;
+    color: white;
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.title strong {
+  background-color: #f0a602;
+  padding: 3px 8px;
+  color: black;
 }
