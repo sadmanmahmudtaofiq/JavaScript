@@ -37,4 +37,40 @@ console.log(taofiqBus); */
 //https://youtu.be/KC-JUipn3gA?list=PLSNRR4BKcowDMTFWYgMqRHRuohVA6IKiD&t=654
 //https://www.youtube.com/watch?v=7qSy_pAAZog&t=987s
 
+const section1 = document.querySelector(".section_1");
+const section2 = document.querySelector(".section_2 img");
+const section3 = document.querySelector(".section_3");
 
+const imageLink = [
+  "../Images/1.jpg",
+  "../Images/2.jpg",
+  "../Images/3.jpg",
+  "../Images/4.jpg",
+  "../Images/5.jpg",
+  "../Images/6.jpg",
+  "../Images/7.jpg",
+  "../Images/8.jpg",
+  "../Images/9.jpg",
+  "../Images/10.jpg",
+];
+
+let numberSave = 0;
+section2.src = imageLink[numberSave];
+
+section3.addEventListener("click", () => {
+  numberSave++;
+  if (numberSave > 10) {
+    numberSave = 1;
+  }
+  section2.src = imageLink[numberSave];
+  console.log(numberSave);
+});
+
+section1.addEventListener("click", () => {
+  numberSave--;
+  if (numberSave < 1) {
+    numberSave = 10;
+  }
+  section2.src = imageLink[numberSave];
+  console.log(numberSave);
+});
