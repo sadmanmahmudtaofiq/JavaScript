@@ -7,75 +7,399 @@
   font-family: "Inter", system-ui;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  /* background: #162126; */
+  background: #487a7ae0;
 }
 
 ::selection {
-  background-color: #5555ad;
+  background-color: #a94044;
   color: white;
 }
 
 .firstTitle {
   font-size: 20px;
   text-align: center;
-  margin-top: 50px;
-  /* color: white; */
+  margin-top: 20px;
   font-weight: bold;
+  transition: all 0.3s;
 }
 
-.firstTitle strong {
+.firstTitle button {
   background-color: #f0a602;
   padding: 3px 8px;
+  font-weight: bold;
   color: black;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.4s;
 }
 
-input {
-  padding: 12px 20px;
+.input {
   width: 300px;
-  background: rgb(31, 32, 35);
-  border: 1px solid rgb(60, 63, 68);
+  height: 36px;
   border-radius: 4px;
-  font-size: 13px;
-  color: rgb(247, 248, 248);
-  appearance: none;
-  transition: border 0.15s ease 0s;
-}
-
-input:focus {
+  padding-left: 12px;
+  font-size: 14px;
+  font-weight: normal;
+  border: 1px solid #89979b;
+  transition: border-color 150ms ease-in-out 0s;
   outline: none;
-  box-shadow: none;
+  color: #21313c;
+  background-color: #ffffff;
+  padding-right: 12px;
 }
 
 .container {
-  display: flex;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+  border-radius: 30px;
+  width: 600px;
+}
+
+.container section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 30px;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.showBorder {
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.content {
+  transition: all 0.2s;
+  height: 0px;
+}
+
+.content div {
+  padding: 20px;
+}
+
+.show {
+  display: flex;
+  height: 140px;
+}
+
+.passworsGenerator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.passworsGenerator div {
+  display: flex;
+  gap: 20px;
+}
+
+.passworsGenerator .showPassword {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.passworsGenerator button {
+  width: fit-content;
+  border: none;
+  background-color: #7272e6;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 10px;
+}
+.passworsGenerator button:hover {
+  background-color: #5454d1;
+}
+
+.busContainer {
+  background-image: url("../Images/Makima.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  color: white !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px #0000001a;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.busTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 6px;
+  margin-top: 20px;
+}
+
+.busName {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ticket {
+  display: flex;
+  gap: 12px;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.left div,
+.right div {
+  flex: 1;
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  display: flex;
+  padding: 0 12px;
+  border: 1px solid #d1d1d154;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.busName > div {
+  flex: 1 1 45%;
+  border: 1px solid #d1d1d154;
+  backdrop-filter: blur(3px);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  padding: 0 12px;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.busName > div:hover,
+.left div:hover,
+.right div:hover {
+  border: 1px solid #d1d1d19a;
+}
+
+.busName input[type="radio"],
+.ticket input[type="radio"] {
+  accent-color: #007bff;
+  width: 18px;
+  height: 18px;
+}
+
+.busName label,
+.ticket label {
+  font-size: 1rem;
+  padding: 12px 12px 12px 0;
+  color: #ffffff;
+  cursor: pointer;
+  width: 100%;
+}
+
+.busInput {
+  margin-top: 20px;
+}
+
+.busInput .input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: 2px solid #d1d1d1dc;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
+  color: white;
+  background-color: transparent;
+}
+
+.busInput .input::placeholder {
+  color: #cfcfcf;
+  font-size: 14px;
+}
+
+.busInput .input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.busSubmit {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #007bffd8;
+  color: white;
+  padding: 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
+}
+
+.busSubmit:hover {
+  background-color: #0056b3;
+}
+
+.showBusInfo {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+.gameContainer {
+  margin: 30px auto;
+  background-color: white;
+  color: black !important;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0px 0px 10px #b4c2c575;
+  padding: 20px;
+  height: 280px;
+  border-radius: 10px;
+  width: fit-content;
 }
 
-.section_1,
-.section_3 {
-  cursor: pointer;
-  background-color: transparent;
+.gameBtns {
+  display: flex;
+  gap: 20px;
+}
+
+.gameBtns button {
   border: none;
+  background-color: lightgreen;
+  padding: 20px 24px;
+  font-size: 2rem;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.section_1 svg,
-.section_3 svg {
-  width: 40px;
+.gameBtns button:hover {
+  transform: scale(1.1);
+}
+
+#showGameResult,
+#total {
+  font-size: 1.5rem;
+}
+
+.funcBtns button {
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 30px;
+  width: 200px;
+  border-radius: 10px;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
-.section_2 {
-  width: 800px;
-  height: 400px;
+.funcBtns button:hover {
+  background-color: #eb0000;
 }
 
-.section_2 img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+main {
+  text-align: center;
+  padding: 20px;
+}
+
+.TTTcontainer {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.game {
+  display: grid;
+  order: 2;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.box {
+  width: 120px;
+  margin: auto;
+  height: 120px;
+  border-radius: 1rem;
+  border: 1px solid #c4c4c4;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 2.5rem;
+  background-color: #fdfebe;
+  color: #000000;
+}
+
+.box:hover {
+  background-color: #d5d6a1;
+}
+
+#reset {
+  padding: 0.8rem 2rem;
+  margin-top: 10px;
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  background-color: #1b1b1b;
+  cursor: pointer;
+}
+
+#message {
+  margin-top: 10px;
+  color: #fdfebe;
+}
+
+.redColor {
+  background-color: #ff4a4a;
+  color: white;
+}
+
+.redColor:hover {
+  background-color: #ff4a4a;
 }
