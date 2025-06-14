@@ -14,7 +14,7 @@
       is fun 😎
     </p>
 
-    <main>
+    <main style="display: none;">
       <h1>Tic Tac Toe</h1>
       <div class="TTTcontainer">
         <div class="game">
@@ -33,7 +33,7 @@
       <button id="reset" title="Reset Game">Reset Game</button>
     </main>
 
-    <div class="container">
+    <div class="container" style="display: none;">
       <section>
         <div class="title">
           <p>Home</p>
@@ -80,7 +80,7 @@
       </section>
     </div>
 
-    <div class="passworsGenerator">
+    <div class="passworsGenerator" style="display: none;">
       <div>
         <input
           class="passwordInput input"
@@ -93,7 +93,7 @@
       <p class="showPassword"></p>
     </div>
 
-    <div class="busContainer">
+    <div class="busContainer" style="display: none;">
       <p class="busTitle">Choice Your Bus</p>
 
       <div class="busName">
@@ -171,7 +171,7 @@
       <p class="showBusInfo"></p>
     </div>
 
-    <div class="gameContainer">
+    <div class="gameContainer" style="display: none;">
       <div class="gameBtns">
         <button onclick="player(`✊`)">✊</button>
         <button onclick="player(`✋`)">✋</button>
@@ -183,6 +183,41 @@
         <button onclick="reset()">Reset</button>
       </div>
     </div>
+
+    <div class="amongContainer">
+      <div class="amongSection">
+        <div class="among">
+          <div class="whiteEye"></div>
+          <div class="amongBody"></div>
+          <div class="legs">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="amongSection">
+        <div class="among">
+           <div class="whiteEye"></div>
+           <div class="amongBody"></div>
+           <div class="legs">
+             <div></div>
+             <div></div>
+           </div>
+       </div>
+      </div>
+      <div class="amongSection">
+        <div class="among">
+            <div class="whiteEye"></div>
+            <div class="amongBody"></div>
+            <div class="legs">
+              <div></div>
+              <div></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
   </body>
   <script src="./script.js"></script>
 </html>
