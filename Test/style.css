@@ -14,11 +14,19 @@ html {
 body {
   /* background: #487a7ae0; */
   background: #cdccd5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 ::selection {
   background-color: #a94044;
   color: white;
+}
+
+.none{
+  display: none !important;
 }
 
 .firstTitle {

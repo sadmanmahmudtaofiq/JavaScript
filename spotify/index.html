@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="photos/Spotify logo.png" type="image/x-icon">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            <section class="image">
+                <img src="photos/hqdefault.jpg" alt="image">
+            </section>
+            <section class="texts">
+                <p>IPhone</p>
+                <p>Somewhere Only We Know</p>
+                <p>Keane</p>
+            </section>
+            <section class="audios">
+                <audio id="audio" src="Lost Kitten.mp3"></audio>
+                <div class="time">
+                    <span id="currentTime">0:00</span>
+                    <input type="range" id="progressBar" value="0" min="0" step="1">
+                    <span id="duration">-0:00</span>
+                </div>
+            </section>
+            <section class="contorls">
+                <i class="ri-rewind-fill"></i>
+                <div class="playPause">
+                    <i class="ri-pause-line"></i>
+                    <i class="ri-play-large-fill"></i>
+                </div>
+                <i class="ri-speed-fill"></i>
+            </section>
+        </div>
+    </main>
+
+
+</body>
+<script src="script.js"></script>
+</html>

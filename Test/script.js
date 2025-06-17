@@ -317,20 +317,24 @@ class person {
 }
 
 class worker extends person {
-  whatDo(name, work){
-    console.log(`${name} work as a ${work} and he ${this.eat()} and ${this.sleep()} everyday.`);
+  whatDo(name, work) {
+    console.log(
+      `${name} work as a ${work} and he ${this.eat()} and ${this.sleep()} everyday.`
+    );
   }
 }
 
 let taofiq = new worker();
 
 class worker2 extends person {
-  whatDo(name, work){
-    console.log(`${name} work as a ${work} and he ${this.eat()} and ${this.sleep()} everyday.`);
+  whatDo(name, work) {
+    console.log(
+      `${name} work as a ${work} and he ${this.eat()} and ${this.sleep()} everyday.`
+    );
   }
 }
 
 let hasan = new worker();
 
 taofiq.whatDo("Taofiq", "Developer");
-hasan.whatDo("Hasan", "Banker")
+hasan.whatDo("Hasan", "Banker");
