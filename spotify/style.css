@@ -13,3 +13,125 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.container {
+  display: flex;
+  height: 450px;
+  width: 330px;
+  gap: 20px;
+}
+
+.section {
+  min-height: 450px;
+  min-width: 330px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #e6e6e6a8;
+  box-shadow: #959da533 0px 8px 24px;
+  border: 1px solid #ccccccc7;
+}
+
+.leftAni {
+  animation: leftAni 0.3s linear forwards;
+}
+
+@keyframes leftAni {
+  0%{
+    transform: translateX(-30px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+.rightAni {
+  animation: rightAni 0.3s linear forwards;
+}
+
+@keyframes rightAni {
+  0%{
+    transform: translateX(30px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 260px;
+}
+.image img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texts {
+  padding: 5px 0;
+}
+
+.name {
+  font-size: 13px;
+  color: #5c5c5c;
+}
+
+.name {
+  margin-bottom: -5px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#progressBar {
+  width: 100%;
+  appearance: none;
+  height: 5px;
+  background: #bfb8a8;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+#progressBar::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #63605a;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.contorls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 10px auto;
+  width: 60%;
+}
+
+.contorls i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.contorls button {
+  background-color: transparent;
+  border: none;
+}
+
+.none {
+  display: none;
+}
