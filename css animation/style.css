@@ -28,10 +28,10 @@
   view-transition-name: title;
 }
 
-.image{
-    view-transition-name: image;
+.image {
+  view-transition-name: image;
 }
 
-::view-transition-group(*){
-    animation-duration: 1s;
+::view-transition-group(*) {
+  animation-duration: 1s;
 }

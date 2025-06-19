@@ -1,10 +1,15 @@
-@import url("https://fonts.cdnfonts.com/css/poppins");
+/* @import url("https://fonts.cdnfonts.com/css/poppins"); */
 
 * {
   font-family: "Poppins", system-ui;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: #7396b7;
+  color: #fff;
 }
 
 body {
@@ -15,82 +20,57 @@ body {
 }
 
 .container {
-  display: flex;
   height: 450px;
+  border-radius: 10px;
   width: 330px;
-  gap: 20px;
+  overflow: hidden;
+  background-image: url("photos/Lost\ Kitten.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .section {
   min-height: 450px;
   min-width: 330px;
-  border-radius: 10px;
   padding: 15px;
-  background-color: #e6e6e6a8;
   box-shadow: #959da533 0px 8px 24px;
   border: 1px solid #ccccccc7;
-}
-
-.leftAni {
-  animation: leftAni 0.3s linear forwards;
-}
-
-@keyframes leftAni {
-  0%{
-    transform: translateX(-30px);
-  }
-  100%{
-    transform: translateX(0);
-  }
-}
-
-.rightAni {
-  animation: rightAni 0.3s linear forwards;
-}
-
-@keyframes rightAni {
-  0%{
-    transform: translateX(30px);
-  }
-  100%{
-    transform: translateX(0);
-  }
+  backdrop-filter: blur(50px);
 }
 
 .image {
   width: 100%;
+  box-shadow: #00000040 0px 54px 55px, #0000001f 0px -12px 30px, #0000001f 0px 4px 6px, #0000002b 0px 12px 13px, rgba(0, 0,#000000)175px;
+  overflow: hidden;
+  border-radius: 10px;
   height: 260px;
 }
 .image img {
-  border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .texts {
   padding: 5px 0;
 }
 
+.title {
+  font-size: 17px;
+  color: white;
+  font-weight: 600;
+}
 .name {
   font-size: 13px;
-  color: #5c5c5c;
-}
-
-.name {
-  margin-bottom: -5px;
-}
-
-.title {
-  font-size: 16px;
-  font-weight: 600;
+  color: white;
+  /* color: #5c5c5c; */
+  margin: 5px 0;
 }
 
 #progressBar {
   width: 100%;
   appearance: none;
   height: 5px;
-  background: #bfb8a8;
+  background: #a5a5a5;
   border-radius: 4px;
   transition: all 0.3s;
 }
@@ -99,7 +79,7 @@ body {
   appearance: none;
   width: 10px;
   height: 10px;
-  background: #63605a;
+  background: #ffffff;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -110,6 +90,7 @@ body {
   justify-content: center;
   justify-content: space-between;
   gap: 10px;
+  color: white;
   font-size: 13px;
 }
 
@@ -124,6 +105,7 @@ body {
 
 .contorls i {
   font-size: 1.5rem;
+  color: white;
   cursor: pointer;
 }
 

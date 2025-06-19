@@ -56,6 +56,7 @@ const content = document.querySelector(".content");
 const left = document.getElementById("left");
 const right = document.getElementById("right");
 const playBtn = document.querySelector(".playPause button");
+const container = document.querySelector(".container");
 
 function audioFunc() {
   const audio = document.getElementById("audio");
@@ -134,11 +135,14 @@ playBtn.addEventListener("click", () => {
 
 right.addEventListener("click", () => {
   audioNum = (audioNum + 1) % audioData.length;
+  container.style.backgroundImage = `url("${audioData[audioNum].image}")`;
+
   updateContent(audioNum);
 });
 
 left.addEventListener("click", () => {
   audioNum = (audioNum - 1 + audioData.length) % audioData.length;
+  container.style.backgroundImage = `url("${audioData[audioNum].image}")`;
   updateContent(audioNum);
 });
 
