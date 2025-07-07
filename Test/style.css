@@ -18,6 +18,7 @@ html {
   --lightBlack: #383838;
   --headerBlur: #d7f1ec63;
   --hover: white;
+  --border: #c2c2c2;
 }
 
 body {
@@ -34,51 +35,16 @@ body {
   display: none !important;
 }
 
-.firstTitle {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 20px;
-  font-weight: bold;
-  transition: all 0.3s;
-}
-
-.firstTitle button {
-  background-color: #f0a602;
-  padding: 3px 8px;
-  font-weight: bold;
-  color: black;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.4s;
-}
-
-.input {
-  width: 300px;
-  height: 36px;
-  border-radius: 4px;
-  padding-left: 12px;
-  font-size: 14px;
-  font-weight: normal;
-  border: 1px solid #89979b;
-  transition: border-color 150ms ease-in-out 0s;
-  outline: none;
-  color: #21313c;
-  background-color: #ffffff;
-  padding-right: 12px;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
-* {
-  box-sizing: border-box;
+a {
+  text-decoration: none;
 }
 
 body.dark {
   background-color: #292c35;
   --black: #ffffff;
   --lightBlack: #c9c8c8;
-  --headerBlur: #a#302df5ad
+  --headerBlur: #a#302df5ad;
+  --border: #646464;
 }
 
 body.dark h1,
@@ -163,7 +129,7 @@ header .logo p {
 
 .shope {
   position: relative;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .addToCartNum {
@@ -187,8 +153,12 @@ header .logo p {
   color: var(--black);
 }
 
-main {
+main,
+.container {
   margin-top: 45px !important;
+}
+
+main {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
@@ -232,4 +202,108 @@ section {
   background-color: var(--main);
   padding: 10px 20px;
   cursor: pointer;
+  width: fit-content;
+}
+
+@media (max-width: 555px) {
+  .addToCart {
+    width: 100%;
+  }
+}
+
+.text div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text div img {
+  width: 80px !important;
+}
+
+/* add to cart */
+
+.middle p {
+  font-size: 1.3rem;
+  color: var(--black);
+}
+.middle p span {
+  color: var(--main) !important;
+}
+
+.subContainer1 {
+  padding: 40px 20px 20px 20px;
+}
+
+.title {
+  margin-bottom: 10px;
+  color: var(--black);
+}
+
+.subtitle {
+  color: var(--main);
+}
+
+.cart {
+  border: 1px solid var(--border);
+  padding: 15px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+.item {
+  margin-top: 8px !important;
+  display: flex;
+  gap: 20px;
+}
+
+.item img {
+  width: 270px;
+  height: 170px;
+  object-fit: cover;
+}
+
+.subSubTitle {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--black);
+}
+
+.price {
+  font-weight: bold;
+  color: #b12704;
+}
+
+.itemText {
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+}
+
+.quanBtn p {
+  font-size: 14px;
+  color: var(--black);
+}
+
+.quanBtn button {
+  border: none;
+  background-color: transparent;
+  color: #005cc8;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.quanBtn button:hover {
+  color: #b12704;
+}
+
+.deliveryDateLabel {
+  font-size: 13px;
+  color: var(--main);
+}
+
+.subSubContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

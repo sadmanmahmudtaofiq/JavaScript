@@ -2,13 +2,14 @@
 
 window.addEventListener("load", () => {
   const checkbox = document.getElementById("checkbox");
-  checkbox.addEventListener("change", () => {
-    document.body.classList.toggle("dark");
-  });
+  if (checkbox) {
+    checkbox.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  }
 });
 
 const main = document.querySelector("main");
-const section = document.querySelectorAll("section");
 const addToCartDiv = document.querySelector(".addToCartNum");
 const addToCartNum = document.querySelector(".addToCartNum p");
 const header = document.querySelector("header");
@@ -20,6 +21,9 @@ let data = [
     name: "Eren Yeager",
     anime: "Attack On Titan",
     quantity: 0,
+    aniCode: "AOT",
+    price: 30.5,
+    rating: 5,
   },
   {
     image:
@@ -27,6 +31,9 @@ let data = [
     name: "Naruto Uzumaki",
     anime: "Naruto",
     quantity: 0,
+    aniCode: "NT",
+    price: 30.99,
+    rating: 45,
   },
 
   {
@@ -35,6 +42,9 @@ let data = [
     name: "Kamado Tanjiro",
     anime: "Demon Slayer",
     quantity: 0,
+    aniCode: "DS",
+    price: 30.8,
+    rating: 5,
   },
   {
     image:
@@ -42,6 +52,9 @@ let data = [
     name: "Senku Ishigami",
     anime: "Dr. Stone",
     quantity: 0,
+    aniCode: "DRS",
+    price: 25.5,
+    rating: 4,
   },
   {
     image:
@@ -49,6 +62,9 @@ let data = [
     name: "Isagi Yoichi",
     anime: "Blue Lock",
     quantity: 0,
+    aniCode: "BL",
+    price: 20.95,
+    rating: 4,
   },
   {
     image:
@@ -56,6 +72,9 @@ let data = [
     name: "Saitama",
     anime: "One Punch Man",
     quantity: 0,
+    aniCode: "OPM",
+    price: 25.55,
+    rating: 5,
   },
   {
     image:
@@ -63,6 +82,9 @@ let data = [
     name: "Frieren",
     anime: "Frieren",
     quantity: 0,
+    aniCode: "FR",
+    price: 27.85,
+    rating: 5,
   },
   {
     image:
@@ -70,13 +92,19 @@ let data = [
     name: "Denji",
     anime: "Chainsaw Man",
     quantity: 0,
+    aniCode: "CM",
+    price: 20.35,
+    rating: 45,
   },
   {
     image:
-      "https://i.pinimg.com/736x/86/30/23/8630231294aff2d9deeba290b36ea0d0.jpg",
+      "https://i.pinimg.com/736x/e8/c1/9d/e8c19dbb454d83c3f8ba77e03ef01b4c.jpg",
     name: "Seth",
     anime: "Radiant",
     quantity: 0,
+    aniCode: "RA",
+    price: 15.5,
+    rating: 4,
   },
   {
     image:
@@ -84,6 +112,9 @@ let data = [
     name: "Masamune Makabe",
     anime: "Masamune-Kun No Revenge",
     quantity: 0,
+    aniCode: "MNR",
+    price: 15.99,
+    rating: 4,
   },
   {
     image:
@@ -91,6 +122,9 @@ let data = [
     name: "Amagami Sister",
     anime: "Tying the Knot with an Amagami Sister",
     quantity: 0,
+    aniCode: "",
+    price: 20.35,
+    rating: 4,
   },
   {
     image:
@@ -98,13 +132,46 @@ let data = [
     name: "Ken Takakura",
     anime: "Dandadan",
     quantity: 0,
+    aniCode: "DD",
+    price: 25.65,
+    rating: 45,
+  },
+  {
+    image:
+      "https://i.pinimg.com/736x/63/27/a3/6327a3b1bdb1dacb349f953ccc5fe810.jpg",
+    name: "Kirie Goshima",
+    anime: "Uzumaki",
+    quantity: 0,
+    aniCode: "UZM",
+    price: 25.65,
+    rating: 4,
+  },
+    {
+    image:
+      "https://i.pinimg.com/736x/5e/aa/fc/5eaafc594cd1c7679db747fc6fc707dc.jpg",
+    name: "Taki Tachibana",
+    anime: "Your Name",
+    quantity: 0,
+    aniCode: "YN",
+    price: 25.65,
+    rating: 45,
+  },
+      {
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5ccabcf60b77bdbb3acaf70a/1579260217183-CBLRYEE3Z6NPYE7178K0/weathering-with-you-japanese-anima.jpg",
+    name: "Mitsuha Miyamizu & Makoto Shinkai",
+    anime: "Weathering with You",
+    quantity: 0,
+    aniCode: "WWY",
+    price: 25.65,
+    rating: 4,
   },
 ];
 
 let html = "";
 
 data.forEach((element) => {
-  let { name, image, anime } = element;
+  let { name, image, anime, rating } = element;
   let code = `
   <section>
     <div class="image">
@@ -113,54 +180,74 @@ data.forEach((element) => {
     <div class="text">
       <p class="name">${name}</p>
       <p class="anime">${anime}</p>
-      <button class="addToCart">Add to Cart</button>
+      <div>
+        <img src="https://sadmanmahmudtaofiq.github.io/Amazon/Photos/rating-${rating}.png" alt="rating">
+        <button class="addToCart">Add to Cart</button>
+      </div>
     </div>
   </section>
   `;
   html += code;
 });
 
-main.innerHTML = html;
+if (main) {
+  main.innerHTML = html;
+}
 
 const addToCartBtn = document.querySelectorAll(".addToCart");
 
-export const saveData = [];
+let savedCart = JSON.parse(localStorage.getItem("cartData")) || [];
+let savedQuantity = parseInt(localStorage.getItem("cartQuantity")) || 0;
 
-export let totalQuantity = 0;
+console.log("🛒 Saved cart items:", savedCart);
+console.log("📦 Total quantity:", savedQuantity);
+
+function saveCartToLocalStorage() {
+  localStorage.setItem("cartData", JSON.stringify(savedCart));
+  localStorage.setItem("cartQuantity", savedQuantity.toString());
+}
 
 addToCartBtn.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     let item = data[i];
-
-    let existingIndex = saveData.findIndex((d) => d.name === item.name);
+    let existingIndex = savedCart.findIndex((d) => d.name === item.name);
 
     if (existingIndex === -1) {
       item.quantity = 1;
-      saveData.push(item);
+      savedCart.push(item);
     } else {
-      saveData[existingIndex].quantity += 1;
+      savedCart[existingIndex].quantity += 1;
     }
 
-    // totalQuantity reset
-    totalQuantity = 0;
-    saveData.forEach((item) => (totalQuantity += item.quantity));
+    savedQuantity = 0;
+    savedCart.forEach((item) => (savedQuantity += item.quantity));
+    saveCartToLocalStorage();
 
-    console.log("মোট quantity:", totalQuantity);
-    console.log(saveData);
+    console.log("মোট quantity:", savedQuantity, savedCart);
 
     showAddToCartNum();
   });
 });
 
 function showAddToCartNum() {
-  if (totalQuantity !== 0) {
-    addToCartNum.innerHTML = totalQuantity;
-    addToCartDiv.classList.remove("none");
+  if (savedQuantity > 0) {
+    if (addToCartNum) {
+      addToCartNum.innerHTML = savedQuantity;
+    }
+    if (addToCartDiv) {
+      addToCartDiv.classList.remove("none");
+    }
   } else {
-    addToCartDiv.classList.add("none");
+    if (addToCartDiv) {
+      addToCartDiv.classList.add("none");
+    }
   }
 }
 showAddToCartNum();
+
+setInterval(() => {
+  showAddToCartNum();
+}, 1000);
 
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 10) {
