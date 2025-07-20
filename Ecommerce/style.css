@@ -218,7 +218,8 @@ section {
   margin: 6px 0;
 }
 
-.addToCart {
+.addToCart,
+.addToCart2 {
   border: none;
   background-color: var(--main);
   padding: 10px 20px;
@@ -227,7 +228,8 @@ section {
 }
 
 @media (max-width: 555px) {
-  .addToCart {
+  .addToCart,
+  .addToCart2 {
     width: 100%;
   }
 }
@@ -336,7 +338,7 @@ section {
   justify-content: space-between;
 }
 
-.COSText{
+.COSText {
   justify-content: start;
 }
 
@@ -532,11 +534,11 @@ section {
   margin-top: 10px;
 }
 
-.EstimatedTax{
+.EstimatedTax {
   margin-bottom: 10px;
 }
 
-.summaryText div button{
+.summaryText div button {
   border: none;
   color: white;
   background-color: var(--main);
@@ -577,7 +579,7 @@ section {
   .quanBtn p {
     font-size: 14px;
   }
-  .subSubContainer{
+  .subSubContainer {
     padding: 0 !important;
   }
 }
@@ -588,6 +590,6 @@ section {
   }
 }
 
-.removeOrderSummary{
+.removeOrderSummary {
   display: none;
 }
