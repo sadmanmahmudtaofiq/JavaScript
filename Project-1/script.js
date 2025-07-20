@@ -126,11 +126,9 @@ input.addEventListener("input", () => start());
 
 function start() {
   const inputValue = input.value.trim().toLowerCase();
-  const getStack = stacks.filter(
-    (sk) => sk.language.toLowerCase() === inputValue
-  );
+  const getStack = stacks.filter((sk) => sk.language.toLowerCase().startsWith(inputValue));
 
-  if (getStack.length > 0) {
+  if (getStack.length > 0 && inputValue) {
     let html = "";
     getStack.forEach((index) => {
       let { name, components, language, popular, cost } = index;
@@ -152,11 +150,20 @@ function start() {
     });
 
     section.innerHTML = html;
-  } else {
+  } 
+
+  else if(!inputValue){
+    html = "";
+    section.innerHTML = html;
+  }
+  
+  else {
     section.innerHTML = `<p class="no-results">No stacks found for language "${inputValue}"</p>`;
   }
-  const message = document.querySelector("section h1 a");
-  message.addEventListener("click", () => {
-    alert("Fuck You!");
+  const message = document.querySelectorAll("section h1 a");
+  message.forEach((msg,i) => {
+    msg.addEventListener("click", () => {
+    alert(`Fuck You!`);
   });
+  })
 }
