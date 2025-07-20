@@ -416,7 +416,7 @@ function showAddToCartNum() {
     }
   }
 
-    if (savedQuantity > 0) {
+  if (savedQuantity > 0) {
     if (addToCartNum2) {
       addToCartNum2.innerHTML = savedQuantity;
     }
@@ -471,7 +471,7 @@ search.addEventListener("input", () => {
             <p class="anime">${anime}</p>
             <div>
               <img src="https://sadmanmahmudtaofiq.github.io/Amazon/Photos/rating-${rating}.png" alt="rating">
-              <button class="addToCart">Add to Cart</button>
+              <button class="addToCart2">Add to Cart</button>
             </div>
           </div>
         </section>
@@ -480,6 +480,8 @@ search.addEventListener("input", () => {
       });
       if (main) {
         main.innerHTML = showResult;
+        addSearchAddToCartListeners(searchResult);
+        bindAllAddToCartButtons(searchResult);
       }
       sectionWidth();
     } else {
@@ -492,7 +494,7 @@ search.addEventListener("input", () => {
   } else {
     if (main) {
       showResult = "";
-      main.innerHTML = html; // Reset to original content
+      main.innerHTML = html;
     }
   }
 });
@@ -532,6 +534,8 @@ search2.addEventListener("input", () => {
       });
       if (main) {
         main.innerHTML = showResult;
+        addSearchAddToCartListeners(searchResult);
+        bindAllAddToCartButtons(searchResult);
       }
       sectionWidth();
     } else {
@@ -548,6 +552,50 @@ search2.addEventListener("input", () => {
     }
   }
 });
+
+function addSearchAddToCartListeners(searchResult) {
+  const addToCartBtns = document.querySelectorAll(".addToCart2");
+  addToCartBtns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      let item = searchResult[i];
+      let existingIndex = savedCart.findIndex((d) => d.name === item.name);
+
+      if (existingIndex === -1) {
+        item.quantity = 1;
+        savedCart.push(item);
+      } else {
+        savedCart[existingIndex].quantity += 1;
+      }
+
+      savedQuantity = 0;
+      savedCart.forEach((item) => (savedQuantity += item.quantity));
+      saveCartToLocalStorage();
+      showAddToCartNum();
+    });
+  });
+}
+
+function bindAllAddToCartButtons(items) {
+  const buttons = document.querySelectorAll(".addToCart, .addToCart2");
+  buttons.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      let item = items[i];
+      let existingIndex = savedCart.findIndex((d) => d.name === item.name);
+
+      if (existingIndex === -1) {
+        item.quantity = 1;
+        savedCart.push(item);
+      } else {
+        savedCart[existingIndex].quantity += 1;
+      }
+
+      savedQuantity = 0;
+      savedCart.forEach((item) => (savedQuantity += item.quantity));
+      saveCartToLocalStorage();
+      showAddToCartNum();
+    });
+  });
+}
 
 function sectionWidth() {
   const section = document.querySelectorAll("section");
