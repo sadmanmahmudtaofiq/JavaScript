@@ -12,54 +12,31 @@
   <body>
 
     <div class="container">
-      <h1>Contact Form</h1>
       <form>
-        <div>
-          <label for="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your full name"
-            required
-          />
+        <div class="amount">
+          <p>Enter Amount</p>
+          <input type="text" value="100" class="amoutInp" />
         </div>
 
-        <div>
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@example.com"
-            required
-          />
+        <div class="dropdown">
+          <div class="form">
+            <img src="https://flagsapi.com/US/flat/64.png"/>
+            <select class="dropdownSelect" name="form"></select>
+          </div>
+
+          <i class="ri-arrow-left-right-line"></i>
+
+          <div class="to">
+            <img src="https://flagsapi.com/BD/flat/64.png"/>
+            <select name="to" class="dropdownSelect"></select>
+          </div>
         </div>
 
-        <div>
-          <label for="subject">Subject</label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="Subject"
-            required
-          />
-        </div>
-
-        <div>
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Write your message here..."
-            required
-          ></textarea>
-        </div>
-
-        <button id="submit" type="submit">Send Message</button>
+        <p class="result">1USD = 100BDT</p>
+        <button class="btn">Get Exchnage Rate</button>
       </form>
     </div>
+
 
   </body>
   <script src="script.js"></script>
