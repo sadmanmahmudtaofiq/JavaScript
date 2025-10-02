@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", system-ui;
+  box-sizing: border-box;
+  cursor: url("../Images/cursor-4.svg") 8 8, auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --main-color: #706fd3;
+  --green: #90ee90;
+  --blue: #00bfff;
+  --cadetblue: #5f9ea0;
+  --darkslate: #483d8b;
+}
+
+::selection {
+  color: white;
+  background-color: var(--blue);
+}
+
+body {
+  background-color: var(--main-color);
+  color: white;
+}
