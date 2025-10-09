@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Jost", system-ui;
   box-sizing: border-box;
-  cursor: url("../Images/cursor-4.svg") 8 8, auto;
+  font-family: "Sora", system-ui;
 }
 
 a {
@@ -13,19 +12,95 @@ a {
 }
 
 :root {
-  --main-color: #706fd3;
-  --green: #90ee90;
-  --blue: #00bfff;
-  --cadetblue: #5f9ea0;
-  --darkslate: #483d8b;
+  --main: #1abc9c;
+  --hover: #17a085;
 }
 
 ::selection {
-  color: white;
-  background-color: var(--blue);
+  background-color: var(--main);
+  color: #fff;
 }
 
-body {
-  background-color: var(--main-color);
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+section {
+  border: 1px solid #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  flex: 1;
+}
+
+.image {
+  display: flex;
+  align-self: center;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+}
+
+.image img {
+  width: 150px;
+}
+
+.title {
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.title,
+.price {
+  font-size: 15px;
+}
+.price {
+  font-weight: bold;
+}
+.ratingImg {
+  width: 95px;
+}
+
+.btn button {
+  background-color: var(--main);
   color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 11px 0;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.btn button:hover {
+  background-color: var(--hover);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn {
+  margin-top: 15px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ratingText {
+    font-size: 12px;
+    color: #28aed6;
+    margin-top: 4px;
 }
