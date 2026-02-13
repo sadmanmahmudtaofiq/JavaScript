@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="../Images/SM.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <div class="left">
+          <div class="logo">
+            <a href="index.html">
+              <p>Taofiq</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="middle">
+          <p>
+            Checkout (<span class="checkoutItems">0</span> <span>items</span>)
+          </p>
+        </div>
+
+        <div class="right">
+          <div class="dark">
+            <div>
+              <input type="checkbox" class="checkbox" id="checkbox" />
+              <label for="checkbox" class="checkbox-label">
+                <i class="ri-moon-fill"></i>
+                <i class="ri-sun-line"></i>
+                <span class="ball"></span>
+              </label>
+            </div>
+          </div>
+          <div class="lock">
+            <img
+              src="https://sadmanmahmudtaofiq.github.io/Amazon/Photos/checkout-lock-icon.png"
+              alt="locked"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="subContainer1">
+        <div class="subSubContainer">
+          <h2 class="title">Review your order</h2>
+
+          <div class="COS">
+            <div class="content"></div>
+            <div class="orderSummary">
+              <h3>Order Summary</h3>
+              <div class="summaryText">
+                <div>
+                  <p>Items (<span class="checkoutItems2">1</span>):</p>
+                  <p>$<span class="ShowPrice">0</span></p>
+                </div>
+                <div>
+                  <p>Shipping & handling:</p>
+                  <p>$0.00</p>
+                </div>
+                <div>
+                  <p>Total before tax:</p>
+                  <p>$<span class="beforeTax">0</span></p>
+                </div>
+                <div class="EstimatedTax">
+                  <p>Estimated tax (10%):</p>
+                  <p>$2.07</p>
+                </div>
+                <div class="totalOrder">
+                  <h3>Order total:</h3>
+                  <h3>$<span id="totalOrder">64.71</span></h3>
+                </div>
+                <div>
+                  <button>
+                    Place your order
+                  </button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </body>
+  <script src="./addToCart.js" type="module"></script>
+</html>

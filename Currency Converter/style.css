@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", system-ui;
+  box-sizing: border-box;
+  cursor: url("../Images/cursor-4.svg") 8 8, auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --main-color: #706fd3;
+  --green: #90ee90;
+  --blue: #00bfff;
+  --cadetblue: #5f9ea0;
+  --darkslate: #483d8b;
+}
+
+::selection {
+  color: white;
+  background-color: var(--main-color);
+}
+
+body {
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wrapper {
+  /* height: 517px; */
+  width: 400px;
+  background-color: white;
+  padding: 0 2em;
+  border-radius: 0.8em;;
+  display: flex;
+  flex-direction: column;
+}
+.app-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.app-icon {
+  width: 8em;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.app-icon:hover{
+  transform: scale(1.1);
+}
+
+.app-icon:active{
+  transform: scale(1);
+}
+
+.app-title {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+#amount {
+  font-weight: 400;
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #02002c;
+  color: #7a789d;
+  margin-bottom: 2em;
+  padding: 0.5em;
+}
+
+#amount:focus {
+  outline: none;
+}
+
+.dropdowns {
+  display: flex;
+  color: var(--main-color);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.dropdowns div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  padding: 0.5em;
+  border-radius: 0.3em;
+  gap: 5px;
+}
+
+select {
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+select:focus {
+  outline: none;
+}
+
+select option {
+  background-color: white;
+  cursor: url("../Images/cursor-4.svg") 8 8, auto !important;
+  color: #02002c;
+}
+
+button {
+  font-size: 1em;
+  width: 100%;
+  background-color: var(--main-color);
+  padding: 1em 0;
+  margin-top: 2em;
+  border-radius: 0.3em;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+
+#result {
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 10px;
+  color: #02002c;
+  padding: 0.8em 0;
+}
+
+.dropdowns div img {
+  width: 1.7em;
+}
+
+.ri-arrow-left-right-line {
+  font-size: 1.9em;
+  color: black !important;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid var(--main-color);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto -0px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

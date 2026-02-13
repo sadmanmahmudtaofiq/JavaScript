@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sadman Mahmud</title>
+    <link
+      rel="shortcut icon"
+      href="../Images/catpicpng.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <div class="app-details">
+        <a
+          href="https://www.instagram.com/sadmanmahmudtaofik/"
+          title="Instagram"
+          target="_blank"
+        >
+          <img class="app-icon" src="../Images/catpicpng.png" alt="logo" />
+        </a>
+        <h1 class="app-title">Currency Converter</h1>
+      </div>
+      <label for="amount">Amount:</label>
+      <input type="text" id="amount" value="100" />
+
+      <div class="dropdowns">
+        <div>
+          <img
+            class="from-flag-icon"
+            src="https://flagsapi.com/US/flat/64.png"
+            alt="flag"
+          />
+          <select id="from-currency-converter"></select>
+        </div>
+        <i class="ri-arrow-left-right-line"></i>
+        <div>
+          <img
+            class="to-flag-icon"
+            src="https://flagsapi.com/BD/flat/64.png"
+            alt="flag"
+          />
+          <select id="to-currency-converter"></select>
+        </div>
+      </div>
+      <button id="convert-button">Converter</button>
+      <div id="loader" class="loader" style="display: none"></div>
+      <p id="result"></p>
+    </div>
+    
+  </body>
+  <script src="script.js"></script>
+</html>

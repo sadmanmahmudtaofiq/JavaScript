@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui;
+}
+
+body {
+  background: #162126;
+}
+
+::selection {
+  background-color: #5555ad;
+  color: white;
+}
+
+.firstTitle {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.firstTitle strong {
+  background-color: #f0a602;
+  padding: 3px 8px;
+  color: black;
+}
+
+input {
+  padding: 12px 20px;
+  width: 300px;
+  background: rgb(31, 32, 35);
+  border: 1px solid rgb(60, 63, 68);
+  border-radius: 4px;
+  font-size: 13px;
+  color: rgb(247, 248, 248);
+  appearance: none;
+  transition: border 0.15s ease 0s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+section h1 {
+  color: white;
+}
+
+section h1 a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s;
+}
+
+section h1 a:hover {
+  color: #2980b9;
+}
+
+section h1 a::after {
+  transition: all 0.2s;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2980b9;
+}
+
+.stack-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.stack-card p {
+  margin: 10px 0;
+}
+
+.stack-card p,
+.stack-card strong {
+  color: black;
+}
+
+h1 {
+  margin: 15px 0;
+}
+.stack-name {
+  color: #2c3e50;
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.popular {
+  display: inline-block;
+  background: #27ae60;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+.not-popular {
+  display: inline-block;
+  background: #e74c3c !important;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+.price {
+  font-weight: bold;
+  color: #2980b9;
+}
+
+.no-results {
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  text-align: center;
+}
+
+.popular{
+  background-color: green;
+}

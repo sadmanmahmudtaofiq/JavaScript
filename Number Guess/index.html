@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAOFIQQ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="../Images/SM.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+
+<header>
+    <button class="btn again">Again!</button>
+    <p class="between">(Between 1 and 20)</p>
+    <h1>Guess My Number!</h1>
+    <div class="number">?</div>
+</header>
+
+  <main>
+    <div class="left">
+      <input type="number" class="guess" min="1" max="20" required />
+      <button class="btn check" type="submit">Check!</button>
+    </div>
+
+    <section class="right">
+      <p class="message">Start guessing...</p>
+      <p class="label-score">
+        💯 Score: 
+        <span class="score">20</span></p>
+      <p class="label-highscore">
+        🥇 Attempt: 
+        <span class="attemptScore">0</span></p>
+    </section>
+  </main>
+
+
+</body> 
+<script src="app.js"></script>
+</html>

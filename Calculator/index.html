@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link
+    rel="shortcut icon"
+    href="../Images/makimafavicon.png"
+    type="image/x-icon"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <title>TAOFIQQ</title>
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <section class="input">
+        <input type="text" id="input">
+      </section>
+
+      <section class="buttonSection">
+        <div class="left">
+          <button onclick="getNumber(7)">7</button>
+          <button onclick="getNumber(8)">8</button>
+          <button onclick="getNumber(9)">9</button>
+          <button onclick="getNumber(4)">4</button>
+          <button onclick="getNumber(5)">5</button>
+          <button onclick="getNumber(6)">6</button>
+          <button onclick="getNumber(1)">1</button>
+          <button onclick="getNumber(2)">2</button>
+          <button onclick="getNumber(3)">3</button>
+          <button onclick="getNumber(0)">0</button>
+          <button onclick="getNumber(`.`)">.</button>
+          <button onclick="reset()">AC</button>
+        </div>
+        <div class="right">
+          <button onclick="getNumber('+')">+</button>
+          <button onclick="getNumber('-')">-</button>
+          <button onclick="getNumber('*')">x</button>
+          <button onclick="getNumber('/')">
+            <i class="ri-divide-fill"></i>
+          </button>
+          <button onclick="getNumber('(')">(</button>
+          <button onclick="getNumber(')')">)</button>
+          <div class="reset">
+          <button class="result" onclick="result()">=</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+</body>
+<script src="script.js"></script>
+</html>

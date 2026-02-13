@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="photos/Spotify logo.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+    <main>
+      <div class="container" id="container">
+        <div class="section">
+          <section class="content">
+            <section class="image">
+              <img src="photos/Lost Kitten.jpg" alt="image" />
+            </section>
+            <section class="texts">
+              <p class="title">Lost Kitten</p>
+              <p class="name">Metric</p>
+            </section>
+            <section class="audios">
+              <audio id="audio" src="Audio/Lost Kitten.mp3"></audio>
+              <div class="time">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar" value="0" min="0" step="1" />
+                <span id="duration">-0:00</span>
+              </div>
+            </section>
+          </section>
+
+          <section class="contorls">
+            <button id="left">
+              <i class="ri-rewind-fill"></i>
+            </button>
+
+            <div class="playPause">
+              <button>
+                <i class="ri-play-large-fill"></i>
+              </button>
+            </div>
+
+            <button id="right">
+              <i class="ri-speed-fill"></i>
+            </button>
+          </section>
+        </div>
+      </div>
+    </main>
+
+  </body>
+  <script src="script.js"></script>
+</html>

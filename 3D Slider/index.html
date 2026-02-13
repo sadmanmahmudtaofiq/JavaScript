@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="banner">
+        <div class="slider sliderAni_1" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="photos/dragon_1.jpg" alt=""></div>
+            <div class="item" style="--position: 2"><img src="photos/dragon_2.jpg" alt=""></div>
+            <div class="item" style="--position: 3"><img src="photos/dragon_3.jpg" alt=""></div>
+            <div class="item" style="--position: 4"><img src="photos/dragon_4.jpg" alt=""></div>
+            <div class="item" style="--position: 5"><img src="photos/dragon_5.jpg" alt=""></div>
+            <div class="item" style="--position: 6"><img src="photos/dragon_6.jpg" alt=""></div>
+            <div class="item" style="--position: 7"><img src="photos/dragon_7.jpg" alt=""></div>
+            <div class="item" style="--position: 8"><img src="photos/dragon_8.jpg" alt=""></div>
+            <div class="item" style="--position: 9"><img src="photos/dragon_9.jpg" alt=""></div>
+            <div class="item" style="--position: 10"><img src="photos/dragon_10.jpg" alt=""></div>
+        </div>
+        <div class="content">
+            <h1 data-content="CSS ONLY">
+                CSS ONLY
+            </h1>
+            <div class="author">
+                <h2>TAOFIQQ DEV</h2>
+                <p><b>Web Design</b></p>
+                <p>
+                    Follow me on Instagram for more information about me.
+                </p>
+            </div>
+            <div class="model"></div>
+        </div>
+        <div class="btn">
+            <button>Change Direction</button>
+        </div>
+    </div>
+    
+</body>
+<script>
+    const btn = document.querySelector(".btn button");
+    const slider = document.querySelector(".slider");
+    btn.addEventListener("click", () => {
+        if(slider.classList.contains("sliderAni_1")){
+            slider.classList.remove("sliderAni_1");
+            slider.classList.add("sliderAni_2")
+        }else{
+            slider.classList.remove("sliderAni_2");
+            slider.classList.add("sliderAni_1")
+        }
+    })
+</script>
+</html>
