@@ -2,11 +2,11 @@
 
 :root {
   /* Deep Jewel Tones */
-  --clr-ruby: #800020;
-  --clr-sapphire: #0f243d;
-  --clr-amethyst: #3d0a4d;
-  --clr-emerald: #013220;
-  --clr-obsidian: #0a0a0a;
+  --clr-ruby: #fa4673;
+  --clr-sapphire: #1d81fc;
+  --clr-amethyst: #c20bfa;
+  --clr-emerald: #19f0a1;
+  --clr-obsidian: #fc1919;
 }
 
 * {
