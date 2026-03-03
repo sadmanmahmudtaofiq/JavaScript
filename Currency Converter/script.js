@@ -170,6 +170,7 @@ const toDropDown = document.querySelector("#to-currency-converter");
 const result = document.querySelector("#result");
 const fromFlag = document.querySelector(".from-flag-icon");
 const toFlag = document.querySelector(".to-flag-icon");
+const amountInp = document.querySelector("#amount");
 
 for (let currency in currencies) {
   const option = document.createElement("option");
@@ -189,7 +190,6 @@ fromDropDown.value = "USD";
 toDropDown.value = "BDT";
 
 const convertCurrency = () => {
-  const amountInp = document.querySelector("#amount");
   let amount = amountInp.value;
   const fromCurrency = fromDropDown.value;
   const toCurrency = toDropDown.value;
@@ -202,7 +202,7 @@ const convertCurrency = () => {
   if (amount.length != 0 && Number(amount)) {
     const getData = async () => {
       const loader = document.getElementById("loader");
-      loader.style.display = "block"; 
+      loader.style.display = "block";
       result.innerHTML = "";
 
       try {
@@ -217,10 +217,10 @@ const convertCurrency = () => {
         }
 
         const convertedAmount = (amount / fromExchangeRate) * toExchangeRate;
-        if(convertedAmount > 1){
+        if (convertedAmount > 1) {
           const resultText = `${amount} ${fromCurrency} = ${Math.floor(convertedAmount)} ${toCurrency}`;
           result.innerHTML = resultText;
-        }else{
+        } else {
           const resultText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
           result.innerHTML = resultText;
         }
@@ -230,7 +230,6 @@ const convertCurrency = () => {
       } finally {
         loader.style.display = "none";
       }
-
     };
 
     getData();
@@ -246,8 +245,13 @@ window.addEventListener("load", convertCurrency);
 
 fromDropDown.addEventListener("change", function () {
   fromFlag.src = `https://flagsapi.com/${currencies[this.value]}/flat/64.png`;
+  convertCurrency();
 });
 
 toDropDown.addEventListener("change", function () {
   toFlag.src = `https://flagsapi.com/${currencies[this.value]}/flat/64.png`;
+  convertCurrency();
 });
+
+amountInp.addEventListener("input", convertCurrency)
+console.log("%c@TAOFIQQ", "background-color: #C94C4A; color: white; padding: 10px; font-size: 2rem; font-weight: bold;");

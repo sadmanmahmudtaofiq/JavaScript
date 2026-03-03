@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Jost", system-ui;
+  font-family: "Inter", system-ui;
   box-sizing: border-box;
-  cursor: url("../Images/cursor-4.svg") 8 8, auto;
+  /* cursor: url("../Images/cursor-4.svg") 8 8, auto; */
 }
 
 a {
@@ -14,15 +14,17 @@ a {
 
 :root {
   --main-color: #706fd3;
+  --second-color: #c44947;
   --green: #90ee90;
   --blue: #00bfff;
   --cadetblue: #5f9ea0;
   --darkslate: #483d8b;
+  --darkblue: #017684;
 }
 
 ::selection {
   color: white;
-  background-color: var(--main-color);
+  background-color: var(--second-color);
 }
 
 body {
@@ -38,7 +40,8 @@ body {
   width: 400px;
   background-color: white;
   padding: 0 2em;
-  border-radius: 0.8em;;
+  z-index: 1;
+  border-radius: 0.8em;
   display: flex;
   flex-direction: column;
 }
@@ -48,18 +51,18 @@ body {
   flex-direction: column;
 }
 
-
 .app-icon {
-  width: 8em;
+  width: 6.5em;
+  margin-top: 10px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
-.app-icon:hover{
+.app-icon:hover {
   transform: scale(1.1);
 }
 
-.app-icon:active{
+.app-icon:active {
   transform: scale(1);
 }
 
@@ -81,7 +84,7 @@ label {
   width: 100%;
   border: none;
   border-bottom: 2px solid #02002c;
-  color: #7a789d;
+  color: var(--second-color);
   margin-bottom: 2em;
   padding: 0.5em;
 }
@@ -102,7 +105,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--main-color);
+  background-color: var(--second-color);
   padding: 0.5em;
   border-radius: 0.3em;
   gap: 5px;
@@ -120,14 +123,16 @@ select:focus {
 
 select option {
   background-color: white;
-  cursor: url("../Images/cursor-4.svg") 8 8, auto !important;
+  cursor:
+    url("../Images/cursor-4.svg") 8 8,
+    auto !important;
   color: #02002c;
 }
 
 button {
   font-size: 1em;
   width: 100%;
-  background-color: var(--main-color);
+  background-color: var(--second-color);
   padding: 1em 0;
   margin-top: 2em;
   border-radius: 0.3em;
@@ -157,7 +162,7 @@ button {
 
 .loader {
   border: 6px solid #f3f3f3;
-  border-top: 6px solid var(--main-color);
+  border-top: 6px solid var(--second-color);
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -174,3 +179,102 @@ button {
   }
 }
 
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: #4cb8b6;
+  overflow: hidden;
+}
+
+.ball {
+  position: absolute;
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  animation: move linear infinite;
+}
+
+.ball:nth-child(odd) {
+  color: #006d5b;
+}
+
+.ball:nth-child(even) {
+  color: #ff6f61;
+}
+
+/* Using a custom attribute for variability */
+.ball:nth-child(1) {
+  top: 77%;
+  left: 88%;
+  animation-duration: 40s;
+  animation-delay: -3s;
+  transform-origin: 16vw -2vh;
+  box-shadow: 40vmin 0 5.703076368487546vmin var(--second-color);
+}
+.ball:nth-child(2) {
+  top: 42%;
+  left: 2%;
+  animation-duration: 53s;
+  animation-delay: -29s;
+  transform-origin: -19vw 21vh;
+  box-shadow: -40vmin 0 5.17594621519026vmin var(--green);
+}
+.ball:nth-child(3) {
+  top: 28%;
+  left: 18%;
+  animation-duration: 49s;
+  animation-delay: -8s;
+  transform-origin: -22vw 3vh;
+  box-shadow: 40vmin 0 5.248179047256236vmin var(--blue);
+}
+.ball:nth-child(4) {
+  top: 50%;
+  left: 79%;
+  animation-duration: 26s;
+  animation-delay: -21s;
+  transform-origin: -17vw -6vh;
+  box-shadow: 40vmin 0 5.279749632220298vmin var(--darkslate);
+}
+.ball:nth-child(5) {
+  top: 46%;
+  left: 15%;
+  animation-duration: 36s;
+  animation-delay: -40s;
+  transform-origin: 4vw 0vh;
+  box-shadow: -40vmin 0 5.964309466052033vmin var(--cadetblue);
+}
+.ball:nth-child(6) {
+  top: 77%;
+  left: 16%;
+  animation-duration: 31s;
+  animation-delay: -10s;
+  transform-origin: 18vw 4vh;
+  box-shadow: 40vmin 0 5.178483653434181vmin var(--darkblue);
+}
+.ball:nth-child(7) {
+  top: 22%;
+  left: 17%;
+  animation-duration: 55s;
+  animation-delay: -6s;
+  transform-origin: 1vw -23vh;
+  box-shadow: -40vmin 0 5.703026794398318vmin var(--green);
+}
+.ball:nth-child(8) {
+  top: 41%;
+  left: 47%;
+  animation-duration: 43s;
+  animation-delay: -28s;
+  transform-origin: 25vw -3vh;
+  box-shadow: 40vmin 0 5.196265905749415vmin var(--blue);
+}
