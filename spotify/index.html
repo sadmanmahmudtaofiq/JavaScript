@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Spotify</title>
@@ -20,17 +20,23 @@
         <div class="section">
           <section class="content">
             <section class="image">
-              <img src="photos/Lost Kitten.jpg" alt="image" />
+              <img src="photos/Lemon Tree.jpeg" alt="Lemon Tree" />
             </section>
             <section class="texts">
-              <p class="title">Lost Kitten</p>
-              <p class="name">Metric</p>
+              <p class="title">Lemon Tree</p>
+              <p class="name">Peter Freudenthaler</p>
             </section>
             <section class="audios">
-              <audio id="audio" src="Audio/Lost Kitten.mp3"></audio>
+              <audio id="audio" src="Audio/lemon tree.mp3"></audio>
               <div class="time">
                 <span id="currentTime">0:00</span>
-                <input type="range" id="progressBar" value="0" min="0" step="1" />
+                <input
+                  type="range"
+                  id="progressBar"
+                  value="0"
+                  min="0"
+                  step="1"
+                />
                 <span id="duration">-0:00</span>
               </div>
             </section>
@@ -50,11 +56,24 @@
             <button id="right">
               <i class="ri-speed-fill"></i>
             </button>
+
+            <!-- Volume Control (now inside the main controls) -->
+            <div class="volume-control">
+              <i class="ri-volume-down-fill"></i>
+              <input
+                type="range"
+                id="volumeSlider"
+                min="0"
+                max="100"
+                value="70"
+              />
+              <i class="ri-volume-up-fill"></i>
+            </div>
           </section>
         </div>
       </div>
     </main>
 
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>

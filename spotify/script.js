@@ -1,4 +1,11 @@
+// script.js
 const audioData = [
+  {
+    image: "photos/Lemon Tree.jpeg",
+    title: "Lemon Tree",
+    name: "Peter Freudenthaler",
+    audioLoc: "Audio/lemon tree.mp3",
+  },
   {
     image: "photos/blue.jpeg",
     title: "Blue",
@@ -41,28 +48,37 @@ const audioData = [
     name: "Humood AlKhudher",
     audioLoc: "Audio/Kun Anta.mp3",
   },
-  {
-    image: "photos/Lemon Tree.jpeg",
-    title: "Lemon Tree",
-    name: "Peter Freudenthaler",
-    audioLoc: "Audio/lemon tree.mp3",
-  },
 ];
 
 let audioNum = 0;
 let isPlaying = false;
+let audio; // will hold the current audio element
 
-const content = document.querySelector(".content");
-const left = document.getElementById("left");
-const right = document.getElementById("right");
-const playBtn = document.querySelector(".playPause button");
-const container = document.querySelector(".container");
+const content = document.querySelector(".content"),
+  left = document.getElementById("left"),
+  right = document.getElementById("right"),
+  playBtn = document.querySelector(".playPause button"),
+  container = document.querySelector(".container"),
+  volumeSlider = document.getElementById("volumeSlider"),
+  titleElement = document.querySelector("title");
 
-function audioFunc() {
-  const audio = document.getElementById("audio");
+// Helper: format time in mm:ss
+function formatTime(seconds) {
+  if (isNaN(seconds)) return "0:00";
+  const min = Math.floor(seconds / 60),
+    sec = Math.floor(seconds % 60)
+      .toString()
+      .padStart(2, "0");
+  return `${min}:${sec}`;
+}
+
+// Attach event listeners to the current audio element
+function attachAudioListeners() {
   const progressBar = document.getElementById("progressBar");
-  const currentTimeEl = document.getElementById("currentTime");
-  const durationEl = document.getElementById("duration");
+  currentTimeEl = document.getElementById("currentTime");
+  durationEl = document.getElementById("duration");
+
+  if (!audio) return;
 
   audio.addEventListener("loadedmetadata", () => {
     progressBar.max = Math.floor(audio.duration);
@@ -79,20 +95,14 @@ function audioFunc() {
   progressBar.addEventListener("input", () => {
     audio.currentTime = progressBar.value;
   });
-
-  function formatTime(seconds) {
-    const min = Math.floor(seconds / 60);
-    const sec = Math.floor(seconds % 60)
-      .toString()
-      .padStart(2, "0");
-    return `${min}:${sec}`;
-  }
 }
 
+// Update the UI with the selected track
 function updateContent(index) {
+  titleElement.innerText = `Spotify - ${audioData[index].title}`
   content.innerHTML = `
     <section class="image">
-      <img src="${audioData[index].image}" alt="image" />
+      <img src="${audioData[index].image}" alt="${audioData[index].title}" />
     </section>
     <section class="texts">
       <p class="title">${audioData[index].title}</p>
@@ -108,35 +118,43 @@ function updateContent(index) {
     </section>
   `;
 
-  audioFunc();
+  // Update global audio reference
+  audio = document.getElementById("audio");
+  attachAudioListeners();
 
-  const newAudio = document.getElementById("audio");
-  if (isPlaying) {
-    newAudio.play();
-  } else {
-    newAudio.pause();
-  }
-}
+  // Set volume from slider
+  audio.volume = volumeSlider.value / 100;
 
-function playOrPause() {
+  // If was playing, play the new track
   if (isPlaying) {
-    playBtn.innerHTML = `<i class="ri-pause-line"></i>`;
     audio.play();
+    playBtn.innerHTML = `<i class="ri-pause-line"></i>`;
   } else {
     playBtn.innerHTML = `<i class="ri-play-large-fill"></i>`;
-    audio.pause();
   }
 }
 
+// Toggle play/pause
+function togglePlayPause() {
+  if (!audio) return;
+  if (isPlaying) {
+    audio.play();
+    playBtn.innerHTML = `<i class="ri-pause-line"></i>`;
+  } else {
+    audio.pause();
+    playBtn.innerHTML = `<i class="ri-play-large-fill"></i>`;
+  }
+}
+
+// Event Listeners
 playBtn.addEventListener("click", () => {
   isPlaying = !isPlaying;
-  playOrPause();
+  togglePlayPause();
 });
 
 right.addEventListener("click", () => {
   audioNum = (audioNum + 1) % audioData.length;
   container.style.backgroundImage = `url("${audioData[audioNum].image}")`;
-
   updateContent(audioNum);
 });
 
@@ -146,4 +164,21 @@ left.addEventListener("click", () => {
   updateContent(audioNum);
 });
 
-audioFunc();
+// Volume control
+volumeSlider.addEventListener("input", (e) => {
+  if (audio) {
+    audio.volume = e.target.value / 100;
+  }
+  // Optional: update gradient (here it's just visual)
+});
+
+// Initial setup on page load
+document.addEventListener("DOMContentLoaded", () => {
+  audio = document.getElementById("audio");
+  attachAudioListeners();
+  audio.volume = volumeSlider.value / 100;
+
+  // Set initial background
+  container.style.backgroundImage = `url("${audioData[0].image}")`;
+});
+

@@ -168,6 +168,44 @@ const question = new Map([
 // const answer = 2;
 // console.log(question.get(question.get("correct") === answer));
 
-console.log(...question.entries());
-console.log(...question.keys());
-console.log(...question.values());
+// console.log(...question.entries());
+// console.log(...question.keys());
+// console.log(...question.values());
+
+const gameEvents = new Map([
+  [17, "GOAL"],
+  [36, "Substitution"],
+  [47, "GOAL"],
+  [61, "Substitution"],
+  [64, "Yellow card"],
+  [69, "Red card"],
+  [70, "Substitution"],
+  [72, "Substitution"],
+  [76, "GOAL"],
+  [80, "GOAL"],
+  [92, "Yellow card"],
+]);
+
+// #1
+const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+// #2
+gameEvents.delete(64);
+// console.log(gameEvents);
+
+const check = new Map([
+  [true, "You are an adult"],
+  [false, "You are a teenager"],
+]);
+
+let ages = [];
+const people = 5;
+
+for (let i = 0; i < people; i++) {
+  let random = Math.ceil(Math.random() * 30);
+  ages.push(random);
+  let text = ages[i] >= 18 ? true : false,
+    message = check.get(text);
+  console.log(i + 1 + ": " + message);
+}
